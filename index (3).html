@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Mohamed Web - مطور مواقع ومصمم جرافيك في بومرداس. 0797260457">
+<meta name="google-site-verification" content="FEQAN6eSxfbamsfV6Q6HgDv6SULs9Dl_Tj7ePbDEfjg" />
+<title>Mohamed Web | مطور مواقع ومصمم جرافيك</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Segoe UI',Tahoma,sans-serif;background:#0a0a0f;color:#e2e8f0;line-height:1.7;direction:rtl}
+a{text-decoration:none;color:inherit}
+.container{max-width:1100px;margin:0 auto;padding:0 1.5rem}
+
+/* Header */
+.header{position:fixed;top:0;left:0;right:0;background:rgba(10,10,15,.9);backdrop-filter:blur(20px);border-bottom:1px solid rgba(255,255,255,.06);z-index:50;padding:1rem 0}
+.header-inner{display:flex;justify-content:space-between;align-items:center}
+.logo{display:flex;align-items:center;gap:.75rem}
+.logo-icon{width:2.5rem;height:2.5rem;background:linear-gradient(135deg,#00f0ff,#a855f7);border-radius:.75rem;display:flex;align-items:center;justify-content:center;color:#000;font-weight:800}
+.logo-text .brand{font-weight:800;font-size:1.1rem}
+.logo-text .sub{font-size:.7rem;color:#94a3b8}
+.nav-links{display:none;gap:2rem;align-items:center}
+@media(min-width:768px){.nav-links{display:flex}}
+.nav-link{color:#94a3b8;transition:.3s}
+.nav-link:hover{color:#00f0ff}
+.btn-glow{padding:.5rem 1.25rem;background:linear-gradient(135deg,#00f0ff,#a855f7);color:#000;font-weight:700;border-radius:.75rem}
+
+/* Hero */
+.hero{min-height:100vh;display:flex;align-items:center;padding-top:6rem;padding-bottom:4rem;position:relative;overflow:hidden}
+.hero-bg{position:absolute;inset:0;background:radial-gradient(circle at 20% 80%,rgba(0,240,255,.1),transparent 50%),radial-gradient(circle at 80% 20%,rgba(168,85,247,.1),transparent 50%)}
+.hero-grid{display:grid;gap:3rem;align-items:center;position:relative;z-index:1}
+@media(min-width:1024px){.hero-grid{grid-template-columns:1fr 1fr}}
+.hero-badge{display:inline-flex;align-items:center;gap:.5rem;padding:.5rem 1rem;background:#1a1a2e;color:#00f0ff;border-radius:9999px;font-size:.875rem;font-weight:600;margin-bottom:1.5rem;border:1px solid rgba(0,240,255,.2)}
+.hero-badge .dot{width:.5rem;height:.5rem;background:#22c55e;border-radius:50%;animation:pulse 2s infinite}
+.hero-title{font-size:2.5rem;font-weight:900;line-height:1.1;margin-bottom:1.5rem}
+@media(min-width:768px){.hero-title{font-size:4rem}}
+.gradient{background:linear-gradient(135deg,#00f0ff,#a855f7,#ec4899);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.hero-desc{font-size:1.125rem;color:#94a3b8;max-width:500px;margin-bottom:2rem}
+.hero-buttons{display:flex;flex-wrap:wrap;gap:1rem}
+.btn-primary{padding:1rem 2rem;background:linear-gradient(135deg,#00f0ff,#a855f7);color:#000;font-weight:800;border-radius:1rem;display:inline-flex;align-items:center;gap:.5rem}
+.btn-outline{padding:1rem 2rem;border:1px solid rgba(255,255,255,.1);color:#e2e8f0;border-radius:1rem;font-weight:600}
+.btn-outline:hover{border-color:#00f0ff;color:#00f0ff}
+.hero-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;padding-top:2rem;margin-top:2rem;border-top:1px solid rgba(255,255,255,.06)}
+.hero-stat{text-align:center}
+.hero-stat .number{font-size:1.75rem;font-weight:900;color:#00f0ff}
+.hero-stat .label{font-size:.875rem;color:#94a3b8}
+
+/* Services */
+.services{padding:5rem 0;background:#12121a}
+.section-header{text-align:center;max-width:600px;margin:0 auto 3rem}
+.section-tag{display:inline-flex;padding:.5rem 1.25rem;background:#1a1a2e;color:#00f0ff;border-radius:9999px;font-size:.875rem;font-weight:600;margin-bottom:1rem;border:1px solid rgba(0,240,255,.2)}
+.section-title{font-size:2rem;font-weight:900;margin-bottom:1rem}
+@media(min-width:768px){.section-title{font-size:3rem}}
+.section-desc{color:#94a3b8}
+.services-grid{display:grid;gap:1.5rem}
+@media(min-width:640px){.services-grid{grid-template-columns:repeat(2,1fr)}}
+@media(min-width:1024px){.services-grid{grid-template-columns:repeat(3,1fr)}}
+.service-card{padding:2rem;background:#1a1a2e;border:1px solid rgba(255,255,255,.06);border-radius:1.5rem;transition:.3s}
+.service-card:hover{border-color:rgba(0,240,255,.2);transform:translateY(-5px)}
+.service-icon{width:3rem;height:3rem;border-radius:1rem;display:flex;align-items:center;justify-content:center;margin-bottom:1rem;font-size:1.25rem}
+.cyan{background:rgba(0,240,255,.1);color:#00f0ff}
+.purple{background:rgba(168,85,247,.1);color:#a855f7}
+.pink{background:rgba(236,72,153,.1);color:#ec4899}
+.service-title{font-size:1.125rem;font-weight:700;margin-bottom:.5rem}
+.service-desc{color:#94a3b8;font-size:.9375rem;margin-bottom:1rem}
+.service-features{display:flex;flex-wrap:wrap;gap:.5rem}
+.service-feature{padding:.375rem .875rem;background:#12121a;border-radius:9999px;font-size:.75rem;color:#94a3b8;border:1px solid rgba(255,255,255,.06)}
+
+/* Booking */
+.booking{padding:5rem 0}
+.booking-grid{display:grid;gap:3rem}
+@media(min-width:1024px){.booking-grid{grid-template-columns:1fr 1fr}}
+.info-card{padding:2rem;background:#1a1a2e;border:1px solid rgba(255,255,255,.06);border-radius:1.5rem;margin-bottom:1.5rem}
+.info-item{display:flex;align-items:flex-start;gap:1rem;margin-bottom:1.5rem}
+.info-item:last-child{margin-bottom:0}
+.info-item .icon{width:3rem;height:3rem;background:rgba(0,240,255,.1);border-radius:1rem;display:flex;align-items:center;justify-content:center;color:#00f0ff;flex-shrink:0;font-size:1.25rem}
+.info-item .title{font-weight:700;margin-bottom:.25rem}
+.info-item .detail{color:#94a3b8;font-size:.9375rem}
+.info-item a{color:#00f0ff;font-weight:600}
+.status-badge{display:inline-flex;align-items:center;gap:.5rem;padding:.375rem 1rem;background:rgba(34,197,94,.1);color:#22c55e;border-radius:9999px;font-size:.875rem;font-weight:600;margin-top:.5rem}
+.status-badge .dot{width:.5rem;height:.5rem;background:#22c55e;border-radius:50%;animation:pulse 2s infinite}
+
+/* Form */
+.form-card{padding:2.5rem;background:#1a1a2e;border:1px solid rgba(255,255,255,.06);border-radius:1.5rem}
+.form-card::before{content:'';display:block;height:2px;background:linear-gradient(90deg,#00f0ff,#a855f7,#ec4899);margin:-2.5rem -2.5rem 2rem -2.5rem;border-radius:1.5rem 1.5rem 0 0}
+.form-group{margin-bottom:1.5rem}
+.form-label{display:block;font-weight:600;margin-bottom:.5rem}
+.form-label .required{color:#ec4899}
+.form-input{width:100%;padding:1rem 1.25rem;border:1px solid rgba(255,255,255,.1);border-radius:1rem;background:#12121a;color:#e2e8f0;font-size:1rem;outline:none;transition:.3s}
+.form-input:focus{border-color:#00f0ff;box-shadow:0 0 0 3px rgba(0,240,255,.1)}
+.form-input::placeholder{color:#64748b}
+textarea.form-input{resize:vertical;min-height:120px}
+select.form-input{appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%2394a3b8' stroke-width='2'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");background-repeat:no-repeat;background-position:left 1rem center;background-size:1.25rem;padding-left:2.5rem}
+.form-submit{width:100%;padding:1.125rem;background:linear-gradient(135deg,#00f0ff,#a855f7);color:#000;font-weight:800;border-radius:1rem;font-size:1.125rem;border:none;cursor:pointer}
+.form-submit:hover{opacity:.9}
+.form-success{text-align:center;padding:3rem 2rem;background:rgba(34,197,94,.05);border:1px solid rgba(34,197,94,.2);border-radius:1.5rem}
+.form-success .icon{width:4rem;height:4rem;background:rgba(34,197,94,.2);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 1.5rem;color:#22c55e;font-size:2rem}
+.form-success h4{font-weight:800;color:#22c55e;margin-bottom:.5rem;font-size:1.5rem}
+.form-success p{color:#86efac}
+
+/* Footer */
+.footer{background:#12121a;border-top:1px solid rgba(255,255,255,.06);padding:4rem 0 2rem}
+.footer-grid{display:grid;gap:3rem;margin-bottom:3rem}
+@media(min-width:768px){.footer-grid{grid-template-columns:2fr 1fr 1fr}}
+.footer-brand .brand{font-weight:800;font-size:1.5rem;margin-bottom:.5rem}
+.footer-brand .sub{color:#94a3b8;font-size:.9375rem;margin-bottom:1rem}
+.footer-social{display:flex;gap:1rem;margin-top:1.5rem}
+.social-link{width:2.5rem;height:2.5rem;background:#1a1a2e;border:1px solid rgba(255,255,255,.06);border-radius:.75rem;display:flex;align-items:center;justify-content:center;color:#94a3b8;transition:.3s}
+.social-link:hover{border-color:#00f0ff;color:#00f0ff}
+.footer-title{font-weight:700;margin-bottom:1.5rem}
+.footer-links{display:flex;flex-direction:column;gap:1rem}
+.footer-links a{color:#94a3b8;transition:.3s}
+.footer-links a:hover{color:#00f0ff}
+.footer-bottom{border-top:1px solid rgba(255,255,255,.06);padding-top:2rem;text-align:center;color:#64748b;font-size:.875rem}
+
+/* WhatsApp Float */
+.whatsapp-float{position:fixed;bottom:1.5rem;right:1.5rem;z-index:50;width:3.5rem;height:3.5rem;background:#25d366;color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 20px rgba(37,211,102,.4);transition:.3s}
+.whatsapp-float:hover{transform:scale(1.1)}
+.whatsapp-float svg{width:1.75rem;height:1.75rem}
+
+/* Scroll Top */
+.scroll-top{position:fixed;bottom:1.5rem;left:1.5rem;z-index:40;width:3rem;height:3rem;background:#1a1a2e;color:#00f0ff;border-radius:50%;display:flex;align-items:center;justify-content:center;border:1px solid rgba(255,255,255,.06);opacity:0;transform:translateY(20px);pointer-events:none;transition:.3s}
+.scroll-top.visible{opacity:1;transform:translateY(0);pointer-events:auto}
+
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.5}}
+</style>
+</head>
+<body>
+
+<!-- Header -->
+<header class="header">
+  <div class="container header-inner">
+    <a href="#" class="logo">
+      <div class="logo-icon">MW</div>
+      <div class="logo-text">
+        <div class="brand">Mohamed Web</div>
+        <div class="sub">Developer & Designer</div>
+      </div>
+    </a>
+    <div class="nav-links">
+      <a href="#services" class="nav-link">الخدمات</a>
+      <a href="#booking" class="nav-link">احجز موعد</a>
+      <a href="#contact" class="nav-link">تواصل معي</a>
+      <a href="#booking" class="btn-glow">اطلب خدمة</a>
+    </div>
+  </div>
+</header>
+
+<!-- Hero -->
+<section class="hero" id="hero">
+  <div class="hero-bg"></div>
+  <div class="container" style="position:relative;z-index:1">
+    <div class="hero-grid">
+      <div>
+        <span class="hero-badge"><span class="dot"></span> متاح للعمل الآن</span>
+        <h1 class="hero-title">أبني لك<br><span class="gradient">موقعاً متطوراً</span><br>يُبهر زوارك</h1>
+        <p class="hero-desc">مطور مواقع ومصمم جرافيك متخصص في بناء تجارب رقمية فريدة. من بومرداس إلى العالم، أحول أفكارك إلى واقع رقمي مذهل.</p>
+        <div class="hero-buttons">
+          <a href="#booking" class="btn-primary">🚀 احجز موعداً</a>
+          <a href="#services" class="btn-outline">💼 استكشف خدماتي</a>
+        </div>
+        <div class="hero-stats">
+          <div class="hero-stat"><div class="number">+50</div><div class="label">مشروع منجز</div></div>
+          <div class="hero-stat"><div class="number">24/7</div><div class="label">متاح دائماً</div></div>
+          <div class="hero-stat"><div class="number">100%</div><div class="label">رضا العملاء</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Services -->
+<section class="services" id="services">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-tag">💼 خدماتي</span>
+      <h2 class="section-title">حلول رقمية <span style="color:#00f0ff">متكاملة</span></h2>
+      <p class="section-desc">كل ما تحتاجه لبناء حضورك الرقمي بأعلى معايير الجودة والإبداع</p>
+    </div>
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="service-icon cyan">🌐</div>
+        <h3 class="service-title">تطوير المواقع</h3>
+        <p class="service-desc">مواقع متجاوبة، سريعة، ومحسنة لمحركات البحث. من صفحات الهبوط إلى المتاجر الإلكترونية المعقدة.</p>
+        <div class="service-features"><span class="service-feature">React / Next.js</span><span class="service-feature">SEO</span><span class="service-feature">Responsive</span></div>
+      </div>
+      <div class="service-card">
+        <div class="service-icon purple">🎨</div>
+        <h3 class="service-title">تصميم الجرافيك</h3>
+        <p class="service-desc">هوية بصرية مميزة تشمل الشعارات، البطاقات، المنشورات الاجتماعية، وكل ما يحتاجه علامتك التجارية.</p>
+        <div class="service-features"><span class="service-feature">Logo Design</span><span class="service-feature">Branding</span><span class="service-feature">Social Media</span></div>
+      </div>
+      <div class="service-card">
+        <div class="service-icon pink">📱</div>
+        <h3 class="service-title">تصميم UI/UX</h3>
+        <p class="service-desc">واجهات مستخدم بديهية وجذابة تجمع بين الجمال والوظيفة. تجربة مستخدم لا تُنسى لكل زائر.</p>
+        <div class="service-features"><span class="service-feature">Figma</span><span class="service-feature">Prototyping</span><span class="service-feature">User Research</span></div>
+      </div>
+      <div class="service-card">
+        <div class="service-icon cyan">⚡</div>
+        <h3 class="service-title">تحسين الأداء</h3>
+        <p class="service-desc">تسريع المواقع، تحسين SEO، وضمان ظهورك في مقدمة نتائج البحث. أداء خارق يُبهر زوارك.</p>
+        <div class="service-features"><span class="service-feature">Speed</span><span class="service-feature">Core Web Vitals</span><span class="service-feature">Analytics</span></div>
+      </div>
+      <div class="service-card">
+        <div class="service-icon purple">🔧</div>
+        <h3 class="service-title">صيانة ودعم</h3>
+        <p class="service-desc">دعم فني مستمر، تحديثات دورية، وحماية كاملة لموقعك. أنا هنا لضمان استمرارية عملك الرقمي.</p>
+        <div class="service-features"><span class="service-feature">24/7 Support</span><span class="service-feature">Backups</span><span class="service-feature">Security</span></div>
+      </div>
+      <div class="service-card">
+        <div class="service-icon pink">📊</div>
+        <h3 class="service-title">استشارات تقنية</h3>
+        <p class="service-desc">نصائح استراتيجية لاختيار التقنية المناسبة، تحليل المنافسين، وخطة رقمية تضمن نجاح مشروعك.</p>
+        <div class="service-features"><span class="service-feature">Strategy</span><span class="service-feature">Tech Stack</span><span class="service-feature">Consulting</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Booking -->
+<section class="booking" id="booking">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-tag">📅 احجز موعد</span>
+      <h2 class="section-title">ابدأ مشروعك <span style="color:#a855f7">الآن</span></h2>
+      <p class="section-desc">املأ النموذج وسأتواصل معك خلال ساعات لتحديد التفاصيل</p>
+    </div>
+    <div class="booking-grid">
+      <div>
+        <div class="info-card">
+          <div class="info-item">
+            <div class="icon">📍</div>
+            <div><div class="title">الموقع</div><div class="detail">بومرداس، الجزائر</div></div>
+          </div>
+          <div class="info-item">
+            <div class="icon">📞</div>
+            <div><div class="title">الهاتف / واتساب</div><a href="tel:+213797260457">0797260457</a></div>
+          </div>
+          <div class="info-item">
+            <div class="icon">⏰</div>
+            <div><div class="title">ساعات العمل</div><div class="detail">متاح كل يوم / 24 ساعة</div><span class="status-badge"><span class="dot"></span> متاح الآن</span></div>
+          </div>
+        </div>
+        <div class="info-card">
+          <div class="info-item">
+            <div class="icon">⚡</div>
+            <div><div class="title">سرعة الاستجابة</div><div class="detail">أرد عليك خلال أقل من 24 ساعة</div></div>
+          </div>
+          <div class="info-item">
+            <div class="icon">💰</div>
+            <div><div class="title">أسعار تنافسية</div><div class="detail">أفضل جودة بأنسب سعر في السوق</div></div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="form-card" id="formCard">
+          <!-- Native Formspree form - no JS needed -->
+          <form action="https://formspree.io/f/xpqewoaw" method="POST" id="bookingForm">
+            <input type="hidden" name="_next" value="https://mohamedweb993-blip.github.io/mohamed-web?submitted=true">
+            <div class="form-group">
+              <label class="form-label">الاسم الكامل <span class="required">*</span></label>
+              <input type="text" name="name" class="form-input" placeholder="محمد أحمد" required minlength="2">
+            </div>
+            <div class="form-group">
+              <label class="form-label">رقم الهاتف / واتساب <span class="required">*</span></label>
+              <input type="tel" name="phone" class="form-input" placeholder="0797260457" dir="ltr" required pattern="0[5-7][0-9]{8}">
+            </div>
+            <div class="form-group">
+              <label class="form-label">نوع الخدمة <span class="required">*</span></label>
+              <select name="service" class="form-input" required>
+                <option value="">اختر الخدمة...</option>
+                <option value="website">🌐 تطوير موقع</option>
+                <option value="design">🎨 تصميم جرافيك</option>
+                <option value="uiux">📱 تصميم UI/UX</option>
+                <option value="seo">⚡ تحسين أداء</option>
+                <option value="maintenance">🔧 صيانة ودعم</option>
+                <option value="consulting">📊 استشارة تقنية</option>
+                <option value="other">✨ أخرى</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label class="form-label">الميزانية التقريبية (اختياري)</label>
+              <select name="budget" class="form-input">
+                <option value="">غير محدد</option>
+                <option value="10-30k">10,000 - 30,000 دج</option>
+                <option value="30-60k">30,000 - 60,000 دج</option>
+                <option value="60-100k">60,000 - 100,000 دج</option>
+                <option value="100k+">+100,000 دج</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label class="form-label">تفاصيل المشروع <span class="required">*</span></label>
+              <textarea name="message" class="form-input" rows="4" placeholder="صف لي فكرتك..." required minlength="10"></textarea>
+            </div>
+            <button type="submit" class="form-submit">🚀 إرسال الطلب</button>
+          </form>
+          <!-- Success message (shown via JS when redirected back) -->
+          <div class="form-success" id="formSuccess" style="display:none">
+            <div class="icon">✅</div>
+            <h4>تم إرسال طلبك بنجاح!</h4>
+            <p>سأتواصل معك خلال 24 ساعة عبر واتساب 📱</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer" id="contact">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand">
+          <div class="brand">Mohamed Web</div>
+          <div class="sub">مطور مواقع ومصمم جرافيك في بومرداس</div>
+        </div>
+        <p style="color:#94a3b8;font-size:.9375rem;line-height:1.8">أبني تجارب رقمية فريدة تجمع بين الإبداع والتقنية. كل مشروع هو تحدٍ جديد أتطلع لتحقيقه بأعلى معايير الجودة.</p>
+        <div class="footer-social">
+          <a href="tel:+213797260457" class="social-link" title="اتصل بي">📞</a>
+          <a href="https://wa.me/213797260457" class="social-link" title="واتساب" target="_blank" rel="noopener">💬</a>
+          <a href="https://www.instagram.com/the_web_architect_/" class="social-link" title="إنستغرام" target="_blank" rel="noopener">📸</a>
+        </div>
+      </div>
+      <div>
+        <h4 class="footer-title">الخدمات</h4>
+        <div class="footer-links">
+          <a href="#services">تطوير المواقع</a>
+          <a href="#services">تصميم الجرافيك</a>
+          <a href="#services">UI/UX Design</a>
+          <a href="#services">تحسين الأداء</a>
+          <a href="#services">صيانة ودعم</a>
+        </div>
+      </div>
+      <div>
+        <h4 class="footer-title">تواصل معي</h4>
+        <div class="footer-links">
+          <a href="tel:+213797260457">📞 0797260457</a>
+          <a href="https://wa.me/213797260457">💬 واتساب</a>
+          <a href="https://www.instagram.com/the_web_architect_/" target="_blank" rel="noopener">📸 إنستغرام</a>
+          <a href="#">📍 بومرداس، الجزائر</a>
+          <a href="#booking">📅 احجز موعد</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">© 2026 Mohamed Web. جميع الحقوق محفوظة. | صُنع بـ 💙 في بومرداس</div>
+  </div>
+</footer>
+
+<!-- WhatsApp Float -->
+<a href="https://wa.me/213797260457" class="whatsapp-float" target="_blank" rel="noopener" title="تواصل عبر واتساب">
+  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
+
+<!-- Scroll Top -->
+<button class="scroll-top" id="scrollTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+
+<script>
+// Show success after Formspree redirect
+if (location.search.includes('submitted=true')) {
+  document.getElementById('bookingForm').style.display = 'none';
+  document.getElementById('formSuccess').style.display = 'block';
+  history.replaceState({}, '', location.pathname);
+}
+
+// Scroll top button
+const scrollTop = document.getElementById('scrollTop');
+window.addEventListener('scroll', () => scrollTop.classList.toggle('visible', scrollY > 500), {passive:true});
+
+// Smooth scroll for anchor links
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+  a.addEventListener('click', e => {
+    e.preventDefault();
+    const t = document.querySelector(a.getAttribute('href'));
+    if (t) t.scrollIntoView({behavior:'smooth'});
+  });
+});
+</script>
+</body>
+</html>
